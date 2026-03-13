@@ -1,0 +1,57 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#4A90D9', 'primaryTextColor': '#fff', 'primaryBorderColor': '#2C6FAC', 'lineColor': '#5C5C5C', 'secondaryColor': '#F5A623', 'tertiaryColor': '#7ED321'}}}%%
+
+graph TD
+    START["🚀 AI Agent 开发工程师 Roadmap"] --> P1
+    START --> P2
+    START --> P3
+
+    subgraph P1["Phase 1 · 基础能力 (1-2 个月)"]
+        direction TB
+        A1["Python 高级特性<br/>async/await · 装饰器 · 类型标注"]
+        A2["LLM 核心概念<br/>Transformer · Tokenization · Prompt Engineering"]
+        A3["API 调用实践<br/>OpenAI / Anthropic SDK · 流式输出 · 错误处理"]
+        A4["向量数据库入门<br/>Embedding 原理 · FAISS / Chroma / Pinecone"]
+        A1 --> A2 --> A3 --> A4
+    end
+
+    subgraph P2["Phase 2 · Agent 框架与模式 (2-3 个月)"]
+        direction TB
+        B1["Agent 设计模式<br/>ReAct · Plan-and-Execute · Reflection"]
+        B2["LangChain / LangGraph<br/>Chain · Agent · Tool · Memory 抽象"]
+        B3["Claude Agent SDK / MCP<br/>Tool Use · Server 构建 · 协议规范"]
+        B4["Function Calling 深入<br/>Tool 定义 · JSON Schema · 多步调用"]
+        B5["RAG 系统搭建<br/>Chunking 策略 · 检索增强 · Reranking"]
+        B1 --> B2 --> B3 --> B4 --> B5
+    end
+
+    subgraph P3["Phase 3 · 工程化能力 (1-2 个月)"]
+        direction TB
+        C1["Prompt 工程化<br/>版本管理 · A/B 测试 · 评估体系"]
+        C2["可观测性<br/>LangSmith / Arize · Token 追踪 · 成本监控"]
+        C3["安全与对齐<br/>Guardrails · 输入过滤 · 输出验证"]
+        C4["部署与基础设施<br/>容器化 · API 网关 · 限流与缓存"]
+        C1 --> C2 --> C3 --> C4
+    end
+
+    P1 --> ADV
+    P2 --> ADV
+    P3 --> ADV
+
+    subgraph ADV["Phase 4 · 进阶方向 (持续深入)"]
+        direction TB
+        D1["Multi-Agent 协作<br/>AutoGen · CrewAI · 角色分工 · 通信协议"]
+        D2["Agent 记忆系统<br/>短期/长期记忆 · 知识图谱 · 状态持久化"]
+        D3["复杂工具集成<br/>Browser Use · Code Interpreter · 外部 API 编排"]
+        D4["评估与基准<br/>AgentBench · 自动化测试 · 回归检测"]
+        D5["前沿论文跟踪<br/>arXiv · 开源项目 · 社区实践"]
+        D1 --> D2 --> D3 --> D4 --> D5
+    end
+
+    ADV --> GOAL["🎯 独立设计并落地<br/>生产级 AI Agent 系统"]
+
+    style START fill:#4A90D9,stroke:#2C6FAC,color:#fff
+    style GOAL fill:#7ED321,stroke:#4A8C1A,color:#fff
+    style P1 fill:#E8F0FE,stroke:#4A90D9
+    style P2 fill:#FFF3E0,stroke:#F5A623
+    style P3 fill:#E8F5E9,stroke:#7ED321
+    style ADV fill:#F3E5F5,stroke:#9C27B0
