@@ -13,22 +13,13 @@
 import sys
 import csv
 
-filepath = sys.argv[1]
-command = sys.argv[2]
-try:
-    column = sys.argv[3].split("--")[1]
-except (IndexError, AttributeError):
-    column = None
 
-try:
-    operation = sys.argv[4].split(":")[0]
-except (IndexError, AttributeError):
-    operation = None
-
-try:
-    value = sys.argv[4].split(":")[1]
-except (IndexError, AttributeError):
-    value = None
+filepath = sys.argv[1] if len(sys.argv) > 1 else None
+command = sys.argv[2] if len(sys.argv) > 2 else None
+column = sys.argv[3].split("--")[1] if len(sys.argv) > 3 else None
+operation = sys.argv[4].split(":")[0]  if len(sys.argv) > 4 else None
+value = sys.argv[4].split(":")[1]  if len(sys.argv) > 4 else None
+    
 
 with open(filepath, newline='') as csv_file:
     students = list(csv.DictReader(csv_file))
@@ -85,6 +76,8 @@ match command:
         print(formatted_students_csv(students=sorted(students, key=lambda s: s[column], reverse=True)[0:int(value)]))
 
 
-
 ##### use argparse
 import argparse
+
+parser = argparse.ArgumentParser()
+parser.parse_args()
