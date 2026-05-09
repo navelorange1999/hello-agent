@@ -1,2 +1,16 @@
 # agent settings
 .claude
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+
+# venv
+.venv/
+venv/
+
+# editor / OS
+.DS_Store
+.vscode/
+.idea/
